@@ -29,12 +29,12 @@ const Hero = () => {
   ];
 
   return (
-    <div className="relative min-h-screen">
-      <Carousel className="w-full h-screen">
+    <div className="relative h-[70vh]">
+      <Carousel className="w-full h-full">
         <CarouselContent>
           {slides.map((slide, index) => (
             <CarouselItem key={index}>
-              <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+              <div className="relative h-[70vh] flex items-center justify-center overflow-hidden">
                 <div 
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: `url(${slide.image})` }}
