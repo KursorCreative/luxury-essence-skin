@@ -60,8 +60,8 @@ const Hero = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-4 text-white border-white hover:bg-white/20 hover:text-white" />
-        <CarouselNext className="right-4 text-white border-white hover:bg-white/20 hover:text-white" />
+        <CarouselPrevious className="left-4 text-white border-white hover:bg-white/20 hover:text-white [&>svg]:h-6 [&>svg]:w-6" />
+        <CarouselNext className="right-4 text-white border-white hover:bg-white/20 hover:text-white [&>svg]:h-6 [&>svg]:w-6" />
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
           {slides.map((_, index) => (
             <button
