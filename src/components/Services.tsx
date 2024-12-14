@@ -36,17 +36,28 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 bg-primary/10">
+    <section 
+      className="py-20 bg-primary/10"
+      aria-labelledby="services-heading"
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-playfair font-bold text-center mb-4">
+        <h2 
+          id="services-heading"
+          className="text-3xl md:text-4xl font-playfair font-bold text-center mb-4"
+        >
           Our Services
         </h2>
         <p className="text-center text-secondary/80 mb-12 max-w-2xl mx-auto">
           Discover our range of luxury beauty and wellness services designed to help you look and feel your best.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          role="list"
+        >
           {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
+            <div key={index} role="listitem">
+              <ServiceCard {...service} />
+            </div>
           ))}
         </div>
       </div>
