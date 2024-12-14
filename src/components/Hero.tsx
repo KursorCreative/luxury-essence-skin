@@ -36,10 +36,10 @@ const Hero = () => {
             <CarouselItem key={index}>
               <div className="relative h-[70vh] flex items-center justify-center overflow-hidden">
                 <div 
-                  className="absolute inset-0 bg-cover bg-center"
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 hover:scale-105"
                   style={{ backgroundImage: `url(${slide.image})` }}
                 >
-                  <div className="absolute inset-0 bg-secondary/60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-secondary/40 to-transparent"></div>
                 </div>
                 
                 <div className="relative container mx-auto px-4 text-center text-white z-10">
@@ -62,6 +62,15 @@ const Hero = () => {
         </CarouselContent>
         <CarouselPrevious className="left-4 text-white border-white hover:bg-white/20 hover:text-white" />
         <CarouselNext className="right-4 text-white border-white hover:bg-white/20 hover:text-white" />
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              className="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-colors"
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
       </Carousel>
     </div>
   );
